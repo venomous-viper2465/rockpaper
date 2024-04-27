@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>RockPaperScissors</title>
+        <script>
+            function getComputerChoice(){
+                let a=Math.random();
+                if(a<=0.33){
+                    return "ROCK";
+                }
+                else if(a>=0.67){
+                    return "PAPER";
+                }
+                else{
+                    return "SCISSORS";
+                }
+
+            }
+            function getHumanChoice(){
+                let a=prompt("Enter rock paper or scissors");
+                //a=a.toUpperCase();
+                return a.toUpperCase();
+            }
+            
+
+            let humanScore=0;
+            let computerScore=0;
+
+            function playround(human, computer){
+                if(human==="ROCK"){
+                    if(computer==="PAPER"){
+                        ++computerScore;
+                    }
+                    else if(computer==="SCISSORS"){
+                        ++humanScore;
+                    }
+                }
+                else if(human==="PAPER"){
+                    if(computer==="SCISSORS"){
+                        ++computerScore;
+                    }
+                    else if(computer==="ROCK"){
+                        ++humanScore;
+                    }
+                }
+                else{
+                    if(computer==="PAPER"){
+                        ++humanScore;
+                    }
+                    else if(computer==="ROCK"){
+                        ++computerScore;
+                    }
+                }
+            }
+
+            function playGame(){
+                for(let i=1; i<=5; ++i){
+                    playround(getHumanChoice(), getComputerChoice());
+                    console.log(humanScore);
+                    console.log(computerScore);
+                }
+                humanScore>computerScore ? console.log('user won ${computerScore}') : console.log('You failed computer score is ${computerScore}');
+            }
+            playGame();
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
