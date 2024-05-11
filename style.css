@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-color: #14213d;
+}
+div.header{
+    background-color: #000000;
+    padding: 48px;
+}
+h1{
+    color: #fca311;
+    text-align: center;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+    font-size: 32px;
+    padding-top: 24px;
+    color: #fff;
+}
+
+h3{
+    text-align: center;
+    padding-top: 16px;
+    color: #fff;
+}
+
+.rock, .paper, .scissors{
+    width: 180px;
+    height: 180px;
+    
+}
+.buttons{
+    padding-top: 48px;
+    display: flex;
+    margin: auto auto;
+    width: 500px;
+    justify-content: space-between;
+    gap: 20px   ;
+}
+
+p{
+    padding-top: 16px;
+    font-weight: bold;
+}

@@ -3,70 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <title>RockPaperScissors</title>
-        <script>
-            function getComputerChoice(){
-                let a=Math.random();
-                if(a<=0.33){
-                    return "ROCK";
-                }
-                else if(a>=0.67){
-                    return "PAPER";
-                }
-                else{
-                    return "SCISSORS";
-                }
-
-            }
-            function getHumanChoice(){
-                let a=prompt("Enter rock paper or scissors");
-                //a=a.toUpperCase();
-                return a.toUpperCase();
-            }
-            
-
-            let humanScore=0;
-            let computerScore=0;
-
-            function playround(human, computer){
-                if(human==="ROCK"){
-                    if(computer==="PAPER"){
-                        ++computerScore;
-                    }
-                    else if(computer==="SCISSORS"){
-                        ++humanScore;
-                    }
-                }
-                else if(human==="PAPER"){
-                    if(computer==="SCISSORS"){
-                        ++computerScore;
-                    }
-                    else if(computer==="ROCK"){
-                        ++humanScore;
-                    }
-                }
-                else{
-                    if(computer==="PAPER"){
-                        ++humanScore;
-                    }
-                    else if(computer==="ROCK"){
-                        ++computerScore;
-                    }
-                }
-            }
-
-            function playGame(){
-                for(let i=1; i<=5; ++i){
-                    playround(getHumanChoice(), getComputerChoice());
-                    console.log(humanScore);
-                    console.log(computerScore);
-                }
-                humanScore>computerScore ? console.log('user won ${computerScore}') : console.log('You failed computer score is ${computerScore}');
-            }
-            playGame();
-
-        </script>
+        <script src="javascript.js" defer></script>
+        <meta name="viewport" content="initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-
+        <div class="header"><h1>ROCK PAPER SCISSORS</h1></div>
+        <div>
+            <h2>Choose your weapon</h2>
+            <h3>First to score 5 points wins the game</h3>
+            <div>
+                <h3 id="player1">Player1</h3>
+                <h3 id="player2">Computer</h3>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="rock"><img src="images/rock.png" width="64px" height="64px"/>
+            <p>Rock</p></button>
+            <button class="paper"><img src="images/paper.png" width="64px" height="64px"/>
+            <p>Paper</p></button>
+            <button class="scissors"><img src="images/scissors.png" width="64px" height="64px"/>
+            <p>Scissors</p></button>    
+        </div>
+        
     </body>
 </html>
