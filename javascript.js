@@ -8,15 +8,14 @@ function playGame(humanChoice){
     if(computerScore!=5 && humanScore!=5){
         let b=getComputerChoice();
         playround(humanChoice, b);
-       
-        console.log(humanScore);
-        console.log(computerScore);
         return;
     }
     else{
-    (humanScore>computerScore) ? (console.log(`user won ${computerScore}`)) : (console.log(`You failed computer score is ${computerScore}`));
+    (humanScore>computerScore) ? (console.log(`user won ${humanScore}`)) : (console.log(`You failed computer score is ${computerScore}`));
     humanScore=0;
     computerScore=0;
+    document.getElementById('player1').textContent=`Player 1:  ${humanScore}`;
+    document.getElementById('player2').textContent=`Player 2:  ${computerScore}`;
     return;
     }
     
@@ -47,9 +46,12 @@ function playround(human, computer){
     document.getElementById('player2').textContent=`Player 2:  ${computerScore}`;
 }
 
-let rock=document.getElementById("rockss");
-let paper=document.querySelector("#paper");
-let scissors=document.querySelector("#scissors");
-rock=addEventListener("click", ()=>{playGame("ROCK")});
-paper=addEventListener("click", ()=>{playGame("PAPER")});
-scissors=addEventListener("click", ()=>{playGame("SCISSORS")});
+
+
+
+let rock=document.getElementById("rock");
+let paper=document.getElementById("paper");
+let scissors=document.getElementById("scissors");
+rock.addEventListener("click", ()=>{playGame("ROCK");});
+paper.addEventListener("click", ()=>{playGame("PAPER");});
+scissors.addEventListener("click", ()=>{playGame("SCISSORS");});
